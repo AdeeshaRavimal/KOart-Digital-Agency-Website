@@ -56,10 +56,10 @@ function Logo({ inverse = false }: { inverse?: boolean }) {
     <a
       href="#top"
       data-testid="link-logo"
-      className={`group inline-flex items-center gap-2.5 ${inverse ? 'text-[#f7f2eb]' : 'text-[#171717]'}`}
+      className={`group inline-flex items-center gap-1 ${inverse ? 'text-[#f7f2eb]' : 'text-[#171717]'}`}
     >
       <img src="/koart-logo.png" alt="" aria-hidden="true" className="h-10 w-10 object-contain" />
-      <span className="font-display text-[1.7rem] font-semibold leading-none tracking-[-0.07em]">KOart</span>
+      <span className="font-display text-[1.7rem] font-semibold leading-none tracking-[-0.07em]">art</span>
     </a>
   );
 }
