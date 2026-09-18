@@ -1,0 +1,31 @@
+Build a modern, professional single-page website for a digital agency called "KOart."
+
+ABOUT KOART:
+KOart is a Sri Lankan digital solutions studio that serves businesses of every size — from single-owner shops to growing SMBs. KOart digitalizes and automates whatever's holding a business back operationally, and keeps that business's brand alive in the market through content and social media that actually gets seen. One team owns the entire solution for the client, end to end. Positioning: affordable pricing, premium execution.
+
+STRUCTURE — Two divisions under one KOart brand:
+
+1. KOart Build (engineering/technical side)
+- Web application development
+- Automation platforms (workflows, internal tools, booking/CRM-type systems)
+- Website & webpage design and development
+- UI/UX design
+
+2. KOart Studio (marketing/creative side)
+- AI-assisted advertising
+- Product photography
+- Content & video shooting
+- Creative scripting for marketing campaigns
+- Social media management
+
+SECTIONS TO INCLUDE:
+1. Hero section — strong headline capturing "one team, full solution, for any Sri Lankan business," with a clear CTA button ("Get a Quote" / "Start Your Project")
+2. About / Why KOart — short section on the affordable-but-premium positioning and the "we own the full solution" idea
+3. Services — two clearly separated blocks/cards for KOart Build and KOart Studio, each listing their sub-services
+4. Who we serve — single-owner businesses, small SMBs, and growing SMBs needing larger web applications
+5. Starting price section — show only: "Websites starting from LKR 19,000" (do not display any other prices)
+6. Contact / quote request form — fields for name, business name, business type, service interested in, and message
+7. Footer with basic contact details placeholder and social links placeholder
+
+DESIGN DIRECTION:
+Modern, clean, tech-forward aesthetic that still feels approachable to small business owners (not overly corporate or intimidating). Confident but friendly tone. Use a professional color palette (suggest a primary brand color plus a dark neutral and a light background) with clear typography hierarchy. Fully responsive for mobile, since many Sri Lankan SMB owners will browse on phones. Smooth section transitions, but keep it fast-loading and simple — no heavy unnecessary animation.

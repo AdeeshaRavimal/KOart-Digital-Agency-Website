@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "KOart Digital Agency Website"
+description = "A modern responsive one-page website for KOart, a Sri Lankan digital solutions studio offering engineering, automation, design, content, and social media services to businesses of every size."
+version = "1.0.0"
+id = "artifacts/koart-website"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20906
+
+[services.development]
+run = "pnpm --filter @workspace/koart-website run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/koart-website", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/koart-website/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20906"
+BASE_PATH = "/"
