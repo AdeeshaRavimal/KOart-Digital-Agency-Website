@@ -235,7 +235,7 @@ function Home() {
         </div>
       </section>
 
-      <div className="overflow-hidden border-b border-[#171717]/10 bg-[#ff3131] py-4">
+      <div className="overflow-hidden border-b border-[#171717]/10 bg-[#d2d0cd] py-4">
         <div className="flex min-w-max animate-[marquee_24s_linear_infinite] items-center gap-8 whitespace-nowrap font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[#171717]">
           <span>Build better</span><span>+</span><span>Tell your story</span><span>+</span><span>Automate the ordinary</span><span>+</span><span>Grow with clarity</span><span>+</span>
           <span>Build better</span><span>+</span><span>Tell your story</span><span>+</span><span>Automate the ordinary</span><span>+</span>
@@ -340,7 +340,7 @@ function Home() {
         </div>
       </section>
 
-      <section id="contact" className="bg-[#ff3131]">
+      <section id="contact" className="bg-[#e9e1d5]">
         <div className="mx-auto grid max-w-[1240px] gap-12 px-5 py-20 sm:px-8 md:py-28 lg:grid-cols-[.9fr_1.1fr] lg:gap-24">
           <div>
             <div className="mb-5 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-[#171717]/65">05 / Start here</div>
@@ -447,9 +447,9 @@ function SelectField({ label, name, value, onChange, options }: { label: string;
 function ServiceCard({ id, number, eyebrow, title, description, accent, icon, items }: { id: string; number: string; eyebrow: string; title: string; description: string; accent: 'lime' | 'coral'; icon: ReactNode; items: string[] }) {
   const isLime = accent === 'lime';
   return (
-    <article id={id} className={`service-card group rounded-[26px] border p-7 sm:p-9 ${isLime ? 'border-[#171717] bg-[#ff3131]' : 'border-[#171717]/10 bg-[#171717] text-[#f7f2eb]'}`}>
+    <article id={id} className={`service-card group rounded-[26px] border p-7 sm:p-9 ${isLime ? 'border-[#171717]/15 bg-[#f7f2eb]' : 'border-[#171717]/10 bg-[#171717] text-[#f7f2eb]'}`}>
       <div className="flex items-start justify-between">
-        <div className={`grid h-12 w-12 place-items-center rounded-2xl ${isLime ? 'bg-[#171717] text-[#ff3131]' : 'bg-[#ff3131] text-[#171717]'}`}>{icon}</div>
+        <div className={`grid h-12 w-12 place-items-center rounded-2xl ${isLime ? 'bg-[#ff3131] text-[#171717]' : 'bg-[#ff3131] text-[#171717]'}`}>{icon}</div>
         <span className={`font-mono text-[11px] font-bold ${isLime ? 'text-[#171717]/55' : 'text-[#f7f2eb]/45'}`}>{number}</span>
       </div>
       <div className="mt-16 grid gap-9 md:grid-cols-[.8fr_1.2fr] md:items-end">
@@ -507,9 +507,9 @@ function Stat({ value, label }: { value: string; label: string }) {
 }
 
 function InsightCard({ className, icon, title, copy, tone }: { className?: string; icon: ReactNode; title: string; copy: string; tone: 'blue' | 'lime' | 'coral' }) {
-  const toneClass = tone === 'blue' ? 'bg-[#d2d0cd]' : tone === 'lime' ? 'bg-[#ff3131]' : 'bg-[#ff3131]';
+  const toneClass = tone === 'blue' ? 'bg-[#d2d0cd]' : tone === 'lime' ? 'bg-[#e9e1d5]' : 'bg-[#f7f2eb]';
   return (
-    <article className={`group flex min-h-[240px] flex-col justify-between rounded-[26px] p-7 transition-transform hover:-translate-y-1.5 md:p-9 ${toneClass} ${className ?? ''}`}>
+    <article className={`group flex min-h-[240px] flex-col justify-between rounded-[26px] border border-[#171717]/10 p-7 transition-transform hover:-translate-y-1.5 md:p-9 ${toneClass} ${className ?? ''}`}>
       <div className="flex items-start justify-between">
         <span className="grid h-11 w-11 place-items-center rounded-full bg-[#171717] text-[#f7f2eb]">{icon}</span>
         <ArrowUpRight size={20} className="text-[#171717]/60 transition-transform group-hover:translate-x-1" />
