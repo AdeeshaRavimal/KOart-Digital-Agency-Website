@@ -88,27 +88,27 @@
   --sidebar: 0 0% 9%;
   --sidebar-foreground: 34 33% 95%;
   --sidebar-border: 0 0% 18%;
-  --sidebar-primary: 346 58% 52%;
+  --sidebar-primary: 347 100% 43%;
   --sidebar-primary-foreground: 0 0% 9%;
   --sidebar-accent: 0 0% 18%;
   --sidebar-accent-foreground: 34 33% 95%;
-  --sidebar-ring: 346 58% 52%;
+  --sidebar-ring: 347 100% 43%;
   --popover: 38 50% 97%;
   --popover-foreground: 0 0% 9%;
   --popover-border: 34 16% 82%;
   --primary: 0 0% 9%;
   --primary-foreground: 34 33% 95%;
-  --secondary: 346 58% 52%;
+  --secondary: 347 100% 43%;
   --secondary-foreground: 0 0% 9%;
   --muted: 36 24% 89%;
   --muted-foreground: 30 5% 40%;
-  --accent: 346 58% 52%;
+  --accent: 347 100% 43%;
   --accent-foreground: 0 0% 9%;
-  --destructive: 346 58% 52%;
+  --destructive: 347 100% 43%;
   --destructive-foreground: 38 50% 97%;
   --input: 34 16% 82%;
   --ring: 0 0% 9%;
-  --chart-1: 346 58% 52%;
+  --chart-1: 347 100% 43%;
   --chart-2: 0 0% 9%;
   --chart-3: 30 5% 40%;
   --chart-4: 34 33% 95%;
@@ -218,7 +218,7 @@
 
   --sidebar-border: 0 0% 18%;
 
-  --sidebar-primary: 346 58% 52%;
+  --sidebar-primary: 347 100% 43%;
 
   --sidebar-primary-foreground: 0 0% 9%;
 
@@ -226,7 +226,7 @@
 
   --sidebar-accent-foreground: 34 33% 95%;
 
-  --sidebar-ring: 346 58% 52%;
+  --sidebar-ring: 347 100% 43%;
 
   --popover: 0 0% 14%;
 
@@ -234,11 +234,11 @@
 
   --popover-border: 0 0% 18%;
 
-  --primary: 346 58% 52%;
+  --primary: 347 100% 43%;
 
   --primary-foreground: 0 0% 9%;
 
-  --secondary: 346 58% 52%;
+  --secondary: 347 100% 43%;
 
   --secondary-foreground: 0 0% 9%;
 
@@ -246,18 +246,18 @@
 
   --muted-foreground: 34 18% 75%;
 
-  --accent: 346 58% 52%;
+  --accent: 347 100% 43%;
 
   --accent-foreground: 0 0% 9%;
 
-  --destructive: 346 58% 52%;
+  --destructive: 347 100% 43%;
 
   --destructive-foreground: 38 50% 97%;
 
   /* Used as the border around inputs. Dark mode: Should be a border that is light enough to have high contrast when rendered on a --card background. More contrast than standard --border */
   --input: 0 0% 18%;
-  --ring: 346 58% 52%;
-  --chart-1: 346 58% 52%;
+  --ring: 347 100% 43%;
+  --chart-1: 347 100% 43%;
   --chart-2: 0 0% 9%;
   --chart-3: 30 5% 40%;
   --chart-4: 34 33% 95%;
@@ -310,7 +310,7 @@ body {
 .koart-shell {
   min-height: 100dvh;
   background:
-    radial-gradient(circle at 85% 4%, hsl(346 58% 52% / 0.12), transparent 22rem),
+    radial-gradient(circle at 85% 4%, hsl(347 100% 43% / 0.12), transparent 22rem),
     hsl(var(--background));
 }
 

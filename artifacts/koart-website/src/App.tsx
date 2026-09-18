@@ -58,12 +58,7 @@ function Logo({ inverse = false }: { inverse?: boolean }) {
       data-testid="link-logo"
       className={`group inline-flex items-center gap-2.5 ${inverse ? 'text-[#f7f2eb]' : 'text-[#171717]'}`}
     >
-      <span
-        className={`relative grid h-8 w-8 place-items-center rounded-[9px] border-2 ${inverse ? 'border-[#cc3f5f]' : 'border-[#171717]'}`}
-      >
-        <span className={`h-2.5 w-2.5 rounded-full ${inverse ? 'bg-[#cc3f5f]' : 'bg-[#cc3f5f]'}`} />
-        <span className={`absolute -right-1 -top-1 h-2.5 w-2.5 rounded-full border-2 ${inverse ? 'border-[#171717] bg-[#cc3f5f]' : 'border-[#f7f2eb] bg-[#171717]'}`} />
-      </span>
+      <img src="/koart-logo.png" alt="" aria-hidden="true" className="h-10 w-10 object-contain" />
       <span className="font-display text-[1.7rem] font-semibold leading-none tracking-[-0.07em]">KOart</span>
     </a>
   );
@@ -147,17 +142,17 @@ function Home() {
 
       <section className="relative overflow-hidden bg-[#171717] pb-16 pt-[132px] text-[#f7f2eb] md:pb-24 md:pt-[170px]">
         <div className="hero-grid absolute inset-0 opacity-20" />
-        <div className="absolute -right-20 top-20 h-72 w-72 rounded-full bg-[#cc3f5f]/10 blur-3xl" />
+        <div className="absolute -right-20 top-20 h-72 w-72 rounded-full bg-[#db0031]/10 blur-3xl" />
         <div className="relative mx-auto max-w-[1240px] px-5 sm:px-8">
           <div className="grid items-end gap-14 lg:grid-cols-[1.05fr_.95fr] lg:gap-10">
             <div>
-              <div className="reveal-up mb-8 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.19em] text-[#cc3f5f]">
-                <span className="h-2 w-2 rounded-full bg-[#cc3f5f]" />
+              <div className="reveal-up mb-8 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.19em] text-[#db0031]">
+                <span className="h-2 w-2 rounded-full bg-[#db0031]" />
                 Digital solutions, made in Sri Lanka
               </div>
               <h1 className="font-display reveal-up reveal-delay-1 max-w-[750px] text-[clamp(3.7rem,8.5vw,8.3rem)] font-semibold leading-[.86]">
                 The business
-                <span className="block text-[#cc3f5f]">behind the</span>
+                <span className="block text-[#db0031]">behind the</span>
                 business.
               </h1>
               <p className="reveal-up reveal-delay-2 mt-9 max-w-[500px] text-[17px] leading-7 text-[#f7f2eb]/68 sm:text-[19px]">
@@ -167,7 +162,7 @@ function Home() {
                 <a
                   href="#contact"
                   data-testid="button-hero-quote"
-                  className="group inline-flex items-center gap-3 rounded-full bg-[#cc3f5f] px-5 py-3.5 text-sm font-bold text-[#171717] transition-transform hover:-translate-y-1"
+                  className="group inline-flex items-center gap-3 rounded-full bg-[#db0031] px-5 py-3.5 text-sm font-bold text-[#171717] transition-transform hover:-translate-y-1"
                 >
                   Tell us what you’re building
                   <ArrowUpRight size={17} className="magnetic-arrow" />
@@ -175,7 +170,7 @@ function Home() {
                 <a
                   href="#services"
                   data-testid="link-hero-services"
-                  className="inline-flex items-center gap-2 rounded-full border border-[#f7f2eb]/25 px-5 py-3.5 text-sm font-semibold text-[#f7f2eb] transition-colors hover:border-[#cc3f5f] hover:text-[#cc3f5f]"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#f7f2eb]/25 px-5 py-3.5 text-sm font-semibold text-[#f7f2eb] transition-colors hover:border-[#db0031] hover:text-[#db0031]"
                 >
                   See the full solution <ArrowDownRight size={16} />
                 </a>
@@ -186,10 +181,10 @@ function Home() {
                 <div className="absolute right-0 top-2 w-[82%] rounded-[22px] border border-[#f7f2eb]/15 bg-[#262626] p-4 shadow-2xl shadow-black/20 float-card">
                  <div className="mb-5 flex items-center justify-between border-b border-[#f7f2eb]/10 pb-3">
                   <div className="flex items-center gap-2">
-                    <span className="h-2 w-2 rounded-full bg-[#cc3f5f]" />
+                    <span className="h-2 w-2 rounded-full bg-[#db0031]" />
                     <span className="font-mono text-[10px] uppercase tracking-widest text-[#f7f2eb]/50">koart / control room</span>
                   </div>
-                   <span className="font-mono text-[10px] text-[#cc3f5f]">LIVE</span>
+                   <span className="font-mono text-[10px] text-[#db0031]">LIVE</span>
                 </div>
                 <div className="space-y-3">
                   {[
@@ -200,10 +195,10 @@ function Home() {
                     <div key={label as string} className="rounded-xl bg-[#171717] p-3">
                       <div className="mb-2 flex items-center justify-between text-[11px]">
                         <span className="text-[#f7f2eb]/80">{label}</span>
-                        <span className="text-[#cc3f5f]">{status}</span>
+                        <span className="text-[#db0031]">{status}</span>
                       </div>
                       <div className="h-1.5 rounded-full bg-[#f7f2eb]/10">
-                        <div className="h-full rounded-full bg-[#cc3f5f]" style={{ width: `${width}%` }} />
+                        <div className="h-full rounded-full bg-[#db0031]" style={{ width: `${width}%` }} />
                       </div>
                     </div>
                   ))}
@@ -213,23 +208,23 @@ function Home() {
                   <span className="font-mono">09:42:18</span>
                 </div>
               </div>
-              <div className="absolute bottom-5 left-0 w-[62%] rounded-[20px] bg-[#cc3f5f] p-5 text-[#171717] shadow-xl shadow-black/20">
+              <div className="absolute bottom-5 left-0 w-[62%] rounded-[20px] bg-[#db0031] p-5 text-[#171717] shadow-xl shadow-black/20">
                 <div className="mb-9 flex items-start justify-between">
                   <span className="font-mono text-[10px] font-bold uppercase tracking-widest">Good work<br />travels.</span>
                   <Sparkles size={22} />
                 </div>
                 <p className="font-display text-2xl font-semibold leading-none">One partner.<br />Every touchpoint.</p>
               </div>
-              <div className="absolute bottom-0 right-1 rounded-full border border-[#cc3f5f]/50 bg-[#171717] px-3 py-2 font-mono text-[10px] uppercase tracking-widest text-[#cc3f5f]">
+              <div className="absolute bottom-0 right-1 rounded-full border border-[#db0031]/50 bg-[#171717] px-3 py-2 font-mono text-[10px] uppercase tracking-widest text-[#db0031]">
                 Built for momentum →
               </div>
             </div>
           </div>
           <div className="mt-20 flex flex-wrap items-center gap-x-9 gap-y-3 border-t border-[#f7f2eb]/15 pt-5 text-[11px] font-bold uppercase tracking-[0.16em] text-[#f7f2eb]/45">
             <span>For the owner-operator</span>
-            <span className="h-1 w-1 rounded-full bg-[#cc3f5f]" />
+            <span className="h-1 w-1 rounded-full bg-[#db0031]" />
             <span>For the small team</span>
-            <span className="h-1 w-1 rounded-full bg-[#cc3f5f]" />
+            <span className="h-1 w-1 rounded-full bg-[#db0031]" />
             <span>For the next chapter</span>
           </div>
         </div>
@@ -245,12 +240,12 @@ function Home() {
       <section id="services" className="mx-auto max-w-[1240px] px-5 py-24 sm:px-8 md:py-36">
         <div className="grid gap-12 lg:grid-cols-[.72fr_1.28fr] lg:gap-20">
           <div className="lg:sticky lg:top-32 lg:self-start">
-            <div className="mb-5 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-[#cc3f5f]">01 / The full solution</div>
+            <div className="mb-5 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-[#db0031]">01 / The full solution</div>
             <h2 className="font-display max-w-[460px] text-[clamp(3rem,5vw,5.5rem)] font-semibold leading-[.9]">Stop stitching it together.</h2>
             <p className="mt-7 max-w-[370px] text-[16px] leading-7 text-[#171717]/65">
               You do not need another supplier who only sees one piece. You need someone who can connect the pieces — and make them pull in the same direction.
             </p>
-            <a href="#contact" data-testid="link-services-cta" className="group mt-8 inline-flex items-center gap-2 text-sm font-bold underline decoration-[#cc3f5f] decoration-2 underline-offset-4">
+            <a href="#contact" data-testid="link-services-cta" className="group mt-8 inline-flex items-center gap-2 text-sm font-bold underline decoration-[#db0031] decoration-2 underline-offset-4">
               Let’s find your next move <ArrowUpRight size={16} className="magnetic-arrow" />
             </a>
           </div>
@@ -283,7 +278,7 @@ function Home() {
         <div className="mx-auto max-w-[1240px] px-5 py-24 sm:px-8 md:py-32">
           <div className="mb-16 flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
-              <div className="mb-5 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-[#cc3f5f]">02 / Built around you</div>
+              <div className="mb-5 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-[#db0031]">02 / Built around you</div>
               <h2 className="font-display max-w-[700px] text-[clamp(3rem,6vw,6.5rem)] font-semibold leading-[.86]">Your business has a shape.<br /><span className="text-[#707070]">We work with it.</span></h2>
             </div>
             <p className="max-w-[280px] text-sm leading-6 text-[#171717]/60">Different stage. Different pressure. Same need for good people who get to the point.</p>
@@ -300,8 +295,8 @@ function Home() {
         <div className="mx-auto max-w-[1240px] px-5 py-24 sm:px-8 md:py-32">
           <div className="grid gap-16 lg:grid-cols-[.8fr_1.2fr] lg:gap-24">
             <div>
-              <div className="mb-5 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-[#cc3f5f]">03 / How we work</div>
-              <h2 className="font-display max-w-[470px] text-[clamp(3rem,5.8vw,6.4rem)] font-semibold leading-[.86]">Clear thinking.<br /><span className="text-[#cc3f5f]">Useful output.</span></h2>
+              <div className="mb-5 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-[#db0031]">03 / How we work</div>
+              <h2 className="font-display max-w-[470px] text-[clamp(3rem,5.8vw,6.4rem)] font-semibold leading-[.86]">Clear thinking.<br /><span className="text-[#db0031]">Useful output.</span></h2>
               <p className="mt-7 max-w-[390px] text-base leading-7 text-[#f7f2eb]/60">No mystery process. No disappearing after launch. Just the right work, in the right order, with a team that talks like humans.</p>
             </div>
             <div className="divide-y divide-[#f7f2eb]/15 border-y border-[#f7f2eb]/15">
@@ -321,7 +316,7 @@ function Home() {
       <section className="mx-auto max-w-[1240px] px-5 py-24 sm:px-8 md:py-36">
         <div className="mb-14 flex items-end justify-between gap-6">
           <div>
-            <div className="mb-5 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-[#cc3f5f]">04 / The useful difference</div>
+            <div className="mb-5 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-[#db0031]">04 / The useful difference</div>
             <h2 className="font-display max-w-[650px] text-[clamp(3rem,5vw,5.4rem)] font-semibold leading-[.88]">More than a pretty<br /><span className="text-[#707070]">front door.</span></h2>
           </div>
           <div className="hidden h-14 w-14 place-items-center rounded-full border border-[#171717]/20 md:grid"><ArrowDownRight size={20} /></div>
@@ -332,8 +327,8 @@ function Home() {
           <InsightCard className="md:col-span-5" icon={<ShieldCheck />} title="Make decisions with less guesswork." copy="Connect the touchpoints, see what is landing, and know where your next best move is." tone="coral" />
           <div className="flex min-h-[240px] flex-col justify-between rounded-[26px] bg-[#171717] p-7 text-[#f7f2eb] md:col-span-7 md:p-9">
             <div className="flex items-start justify-between">
-              <span className="font-mono text-[11px] uppercase tracking-widest text-[#cc3f5f]">The KOart principle</span>
-              <Sparkles size={22} className="text-[#cc3f5f]" />
+              <span className="font-mono text-[11px] uppercase tracking-widest text-[#db0031]">The KOart principle</span>
+              <Sparkles size={22} className="text-[#db0031]" />
             </div>
             <p className="font-display max-w-[560px] text-[clamp(1.7rem,3vw,3rem)] font-medium leading-[.95]">Good digital work should make the next day feel a little lighter.</p>
           </div>
@@ -347,7 +342,7 @@ function Home() {
             <h2 className="font-display max-w-[540px] text-[clamp(3.6rem,7vw,7.3rem)] font-semibold leading-[.82]">Tell us what’s on your mind.</h2>
             <p className="mt-8 max-w-[410px] text-[17px] leading-7 text-[#171717]/72">A new website, a better workflow, a content reset — or just a conversation about what is not working yet. We will meet you there.</p>
             <div className="mt-12 flex items-center gap-3 text-sm font-semibold">
-              <span className="grid h-9 w-9 place-items-center rounded-full bg-[#171717] text-[#cc3f5f]"><Send size={16} /></span>
+              <span className="grid h-9 w-9 place-items-center rounded-full bg-[#171717] text-[#db0031]"><Send size={16} /></span>
               <span>Usually reply within two business days.</span>
             </div>
           </div>
@@ -355,12 +350,12 @@ function Home() {
             {submitted ? (
               <div className="flex min-h-[470px] flex-col justify-between">
                 <div>
-                  <div className="mb-7 grid h-14 w-14 place-items-center rounded-full bg-[#cc3f5f]"><Check size={27} /></div>
+                  <div className="mb-7 grid h-14 w-14 place-items-center rounded-full bg-[#db0031]"><Check size={27} /></div>
                   <p className="mb-3 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-[#707070]">Message received</p>
                   <h3 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] font-semibold leading-[.9]">That’s a good place to start.</h3>
                   <p className="mt-6 max-w-[390px] leading-7 text-[#171717]/65">Thanks for reaching out, {form.name.split(' ')[0] || 'there'}. Your note is safely with us. We will be in touch shortly.</p>
                 </div>
-                <button type="button" data-testid="button-send-another" onClick={() => { setSubmitted(false); setForm(initialForm); }} className="inline-flex w-fit items-center gap-2 text-sm font-bold underline decoration-[#cc3f5f] decoration-2 underline-offset-4">
+                <button type="button" data-testid="button-send-another" onClick={() => { setSubmitted(false); setForm(initialForm); }} className="inline-flex w-fit items-center gap-2 text-sm font-bold underline decoration-[#db0031] decoration-2 underline-offset-4">
                   Send another message <ArrowUpRight size={16} />
                 </button>
               </div>
@@ -375,7 +370,7 @@ function Home() {
                   <SelectField label="I’m interested in" name="service" value={form.service} onChange={(value) => updateField('service', value)} options={['KOart Build', 'KOart Studio', 'Build + Studio', 'Not sure yet']} />
                 </div>
                 <label className="block">
-                  <span className="mb-2 block text-[12px] font-bold uppercase tracking-[0.1em] text-[#171717]/55">A little about the project <span className="text-[#cc3f5f]">*</span></span>
+                  <span className="mb-2 block text-[12px] font-bold uppercase tracking-[0.1em] text-[#171717]/55">A little about the project <span className="text-[#db0031]">*</span></span>
                   <textarea
                     required
                     name="message"
@@ -388,7 +383,7 @@ function Home() {
                   />
                 </label>
                 <button type="submit" data-testid="button-submit-quote" className="group flex w-full items-center justify-between rounded-xl bg-[#171717] px-5 py-4 text-left text-sm font-bold text-[#f7f2eb] transition-transform hover:-translate-y-0.5">
-                  Send my enquiry <ArrowUpRight size={19} className="magnetic-arrow text-[#cc3f5f]" />
+                  Send my enquiry <ArrowUpRight size={19} className="magnetic-arrow text-[#db0031]" />
                 </button>
                 <p className="text-center text-[11px] leading-5 text-[#171717]/45">No hard sell. No mailing list. Just a useful first conversation.</p>
               </form>
@@ -405,10 +400,10 @@ function Home() {
               <p className="mt-5 max-w-[270px] text-sm leading-6 text-[#f7f2eb]/55">One team for the digital work that keeps your business moving.</p>
             </div>
             <div className="flex flex-wrap gap-x-7 gap-y-3 text-sm text-[#f7f2eb]/65">
-              <a href="#build" data-testid="link-footer-build" className="transition-colors hover:text-[#cc3f5f]">KOart Build</a>
-              <a href="#studio" data-testid="link-footer-studio" className="transition-colors hover:text-[#cc3f5f]">KOart Studio</a>
-              <a href="#contact" data-testid="link-footer-contact" className="transition-colors hover:text-[#cc3f5f]">Get in touch</a>
-              <a href="#top" data-testid="link-footer-top" className="transition-colors hover:text-[#cc3f5f]">Back to top ↑</a>
+              <a href="#build" data-testid="link-footer-build" className="transition-colors hover:text-[#db0031]">KOart Build</a>
+              <a href="#studio" data-testid="link-footer-studio" className="transition-colors hover:text-[#db0031]">KOart Studio</a>
+              <a href="#contact" data-testid="link-footer-contact" className="transition-colors hover:text-[#db0031]">Get in touch</a>
+              <a href="#top" data-testid="link-footer-top" className="transition-colors hover:text-[#db0031]">Back to top ↑</a>
             </div>
           </div>
           <div className="flex flex-col justify-between gap-4 pt-7 text-[11px] uppercase tracking-[0.13em] text-[#f7f2eb]/35 sm:flex-row">
@@ -425,7 +420,7 @@ function Home() {
 function Field({ label, name, value, onChange, required = false }: { label: string; name: string; value: string; onChange: (value: string) => void; required?: boolean }) {
   return (
     <label className="block">
-      <span className="mb-2 block text-[12px] font-bold uppercase tracking-[0.1em] text-[#171717]/55">{label} {required && <span className="text-[#cc3f5f]">*</span>}</span>
+      <span className="mb-2 block text-[12px] font-bold uppercase tracking-[0.1em] text-[#171717]/55">{label} {required && <span className="text-[#db0031]">*</span>}</span>
       <input required={required} name={name} value={value} onChange={(event) => onChange(event.target.value)} data-testid={`input-${name}`} className="w-full rounded-xl border border-[#171717]/15 bg-[#e9e1d5]/45 px-4 py-3 text-[15px] outline-none transition-colors placeholder:text-[#171717]/35 focus:border-[#171717]" />
     </label>
   );
@@ -434,7 +429,7 @@ function Field({ label, name, value, onChange, required = false }: { label: stri
 function SelectField({ label, name, value, onChange, options }: { label: string; name: string; value: string; onChange: (value: string) => void; options: string[] }) {
   return (
     <label className="relative block">
-      <span className="mb-2 block text-[12px] font-bold uppercase tracking-[0.1em] text-[#171717]/55">{label} <span className="text-[#cc3f5f]">*</span></span>
+      <span className="mb-2 block text-[12px] font-bold uppercase tracking-[0.1em] text-[#171717]/55">{label} <span className="text-[#db0031]">*</span></span>
       <select required name={name} value={value} onChange={(event) => onChange(event.target.value)} data-testid={`select-${name}`} className="w-full appearance-none rounded-xl border border-[#171717]/15 bg-[#e9e1d5]/45 px-4 py-3 text-[15px] outline-none transition-colors focus:border-[#171717]">
         <option value="" disabled>Select one</option>
         {options.map((option) => <option key={option} value={option}>{option}</option>)}
@@ -447,24 +442,24 @@ function SelectField({ label, name, value, onChange, options }: { label: string;
 function ServiceCard({ id, number, eyebrow, title, description, accent, icon, items }: { id: string; number: string; eyebrow: string; title: string; description: string; accent: 'lime' | 'coral'; icon: ReactNode; items: string[] }) {
   const isLime = accent === 'lime';
   return (
-    <article id={id} className={`service-card group rounded-[26px] border p-7 sm:p-9 ${isLime ? 'border-[#171717]/15 bg-[#f7f2eb]' : 'border-[#171717]/10 bg-[#171717] text-[#f7f2eb]'}`}>
+    <article id={id} className={`service-card group rounded-[26px] border p-7 sm:p-9 ${isLime ? 'border-[#db0031] bg-[#db0031] text-[#f7f2eb]' : 'border-[#171717]/10 bg-[#171717] text-[#f7f2eb]'}`}>
       <div className="flex items-start justify-between">
-        <div className={`grid h-12 w-12 place-items-center rounded-2xl ${isLime ? 'bg-[#cc3f5f] text-[#171717]' : 'bg-[#cc3f5f] text-[#171717]'}`}>{icon}</div>
+        <div className={`grid h-12 w-12 place-items-center rounded-2xl ${isLime ? 'bg-[#171717] text-[#db0031]' : 'bg-[#db0031] text-[#171717]'}`}>{icon}</div>
         <span className={`font-mono text-[11px] font-bold ${isLime ? 'text-[#171717]/55' : 'text-[#f7f2eb]/45'}`}>{number}</span>
       </div>
       <div className="mt-16 grid gap-9 md:grid-cols-[.8fr_1.2fr] md:items-end">
         <div>
-          <p className={`mb-3 font-mono text-[10px] font-bold uppercase tracking-[0.18em] ${isLime ? 'text-[#171717]/55' : 'text-[#cc3f5f]'}`}>{eyebrow}</p>
+          <p className={`mb-3 font-mono text-[10px] font-bold uppercase tracking-[0.18em] ${isLime ? 'text-[#f7f2eb]/65' : 'text-[#db0031]'}`}>{eyebrow}</p>
           <h3 className="font-display text-[clamp(2.7rem,5vw,5rem)] font-semibold leading-[.85]">{title}</h3>
         </div>
         <div>
-          <p className={`max-w-[370px] text-[15px] leading-6 ${isLime ? 'text-[#171717]/68' : 'text-[#f7f2eb]/65'}`}>{description}</p>
+          <p className={`max-w-[370px] text-[15px] leading-6 ${isLime ? 'text-[#f7f2eb]/80' : 'text-[#f7f2eb]/65'}`}>{description}</p>
           <ul className="mt-7 grid gap-2.5">
-            {items.map((item) => <li key={item} className="flex items-center gap-2 text-[13px] font-semibold"><Check size={14} className="text-[#cc3f5f]" />{item}</li>)}
+            {items.map((item) => <li key={item} className={`flex items-center gap-2 text-[13px] font-semibold ${isLime ? 'text-[#f7f2eb]' : ''}`}><Check size={14} className={isLime ? 'text-[#f7f2eb]' : 'text-[#db0031]'} />{item}</li>)}
           </ul>
         </div>
       </div>
-      <div className={`mt-10 flex items-center gap-2 text-[12px] font-bold ${isLime ? 'text-[#171717]' : 'text-[#cc3f5f]'}`}>Explore this lane <ArrowUpRight size={15} className="magnetic-arrow" /></div>
+      <div className={`mt-10 flex items-center gap-2 text-[12px] font-bold ${isLime ? 'text-[#f7f2eb]' : 'text-[#db0031]'}`}>Explore this lane <ArrowUpRight size={15} className="magnetic-arrow" /></div>
     </article>
   );
 }
@@ -473,8 +468,8 @@ function AudienceCard({ number, title, copy, icon }: { number: string; title: st
   return (
     <article className="group min-h-[310px] rounded-[22px] border border-[#171717]/12 bg-[#f7f2eb] p-7 transition-transform hover:-translate-y-1.5 sm:p-8">
       <div className="flex items-start justify-between">
-        <span className="font-mono text-[11px] font-bold text-[#cc3f5f]">{number}</span>
-        <span className="grid h-9 w-9 place-items-center rounded-full bg-[#cc3f5f] text-[#171717]">{icon}</span>
+        <span className="font-mono text-[11px] font-bold text-[#db0031]">{number}</span>
+        <span className="grid h-9 w-9 place-items-center rounded-full bg-[#db0031] text-[#171717]">{icon}</span>
       </div>
       <div className="mt-20">
         <h3 className="font-display text-[2rem] font-semibold leading-[.9]">{title}</h3>
@@ -492,7 +487,7 @@ function ProcessRow({ step, title, copy, icon }: { step: string; title: string; 
         <h3 className="font-display text-3xl font-medium leading-none text-[#f7f2eb]">{title}</h3>
         <p className="mt-3 max-w-[450px] text-sm leading-6 text-[#f7f2eb]/55">{copy}</p>
       </div>
-      <span className="hidden text-[#cc3f5f] transition-transform group-hover:translate-x-1 sm:block">{icon}</span>
+      <span className="hidden text-[#db0031] transition-transform group-hover:translate-x-1 sm:block">{icon}</span>
     </div>
   );
 }
@@ -500,7 +495,7 @@ function ProcessRow({ step, title, copy, icon }: { step: string; title: string; 
 function Stat({ value, label }: { value: string; label: string }) {
   return (
     <div>
-      <div className="font-display text-[2.9rem] font-semibold leading-none text-[#cc3f5f]">{value}</div>
+      <div className="font-display text-[2.9rem] font-semibold leading-none text-[#db0031]">{value}</div>
       <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.15em] text-[#f7f2eb]/45">{label}</div>
     </div>
   );
