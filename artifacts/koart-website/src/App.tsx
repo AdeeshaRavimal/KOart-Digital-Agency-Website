@@ -1,4 +1,4 @@
-import { type FormEvent, type ReactNode, useState } from 'react';
+import { type FormEvent, type ReactNode, useEffect, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import {
   ArrowDownRight,
@@ -51,6 +51,27 @@ const serviceLinks = [
   { label: 'Who we serve', href: '#fit' },
 ];
 
+const heroCardSlides = [
+  {
+    eyebrow: 'Starting with',
+    title: '17 LKR',
+    body: 'A clear first move. A better partner.',
+    note: 'Start small. Move clearly.',
+  },
+  {
+    eyebrow: 'One partner.',
+    title: 'Every touchpoint.',
+    body: 'Build, content, and growth thinking in one room.',
+    note: 'Less juggling. More momentum.',
+  },
+  {
+    eyebrow: 'Made for',
+    title: 'Your next chapter.',
+    body: 'Useful work that fits how your business actually runs.',
+    note: 'Clarity before complexity.',
+  },
+];
+
 function Logo({ inverse = false }: { inverse?: boolean }) {
   return (
     <a
@@ -68,6 +89,15 @@ function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [form, setForm] = useState<FormState>(initialForm);
   const [submitted, setSubmitted] = useState(false);
+  const [heroCardIndex, setHeroCardIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setHeroCardIndex((current) => (current + 1) % heroCardSlides.length);
+    }, 3600);
+
+    return () => window.clearInterval(timer);
+  }, []);
 
   const updateField = (field: keyof FormState, value: string) => {
     setForm((current) => ({ ...current, [field]: value }));
@@ -177,63 +207,44 @@ function Home() {
               </div>
             </div>
 
-              <div className="relative mx-auto min-h-[540px] w-full max-w-[490px] lg:min-h-[500px]">
-                <div className="absolute right-0 top-2 w-[86%] rounded-[22px] border border-[#f7f2eb]/15 bg-[#262626] p-4 shadow-2xl shadow-black/20 float-card">
-                  <div className="mb-4 flex items-center justify-between border-b border-[#f7f2eb]/10 pb-3">
+              <div className="relative mx-auto min-h-[390px] w-full max-w-[490px] lg:min-h-[500px]">
+                <div className="absolute right-0 top-2 w-[90%] rounded-[28px] bg-[#db0031] p-6 text-[#171717] shadow-2xl shadow-black/25 float-card sm:w-[86%]">
+                  <div className="mb-7 flex items-center justify-between border-b border-[#171717]/20 pb-4">
                     <div className="flex items-center gap-2">
-                      <span className="h-2 w-2 rounded-full bg-[#db0031]" />
-                      <span className="font-mono text-[10px] uppercase tracking-widest text-[#f7f2eb]/50">koart / why us</span>
+                      <span className="h-2 w-2 rounded-full bg-[#171717]" />
+                      <span className="font-mono text-[10px] uppercase tracking-widest text-[#171717]/60">koart / card set</span>
                     </div>
-                    <span className="font-mono text-[10px] text-[#db0031]">START HERE</span>
+                    <span className="font-mono text-[10px] font-bold">{String(heroCardIndex + 1).padStart(2, '0')} / 03</span>
                   </div>
-                  <div className="space-y-2.5">
-                    <div className="rounded-xl bg-[#171717] p-3.5">
-                      <div className="flex items-center justify-between gap-3">
-                        <div className="flex items-center gap-2.5">
-                          <ShieldCheck size={17} className="shrink-0 text-[#db0031]" />
-                          <span className="text-[12px] font-semibold text-[#f7f2eb]/90">One team. Less juggling.</span>
-                        </div>
-                        <span className="font-mono text-[9px] text-[#f7f2eb]/35">01</span>
-                      </div>
-                      <p className="mt-2 text-[11px] leading-4 text-[#f7f2eb]/50">Build, content, and growth thinking in one room.</p>
+                  <div key={heroCardIndex} className="min-h-[245px] animate-[card-swap_500ms_ease-out]">
+                    <div className="mb-5 flex items-start justify-between">
+                      <span className="font-mono text-[10px] font-bold uppercase tracking-widest">{heroCardSlides[heroCardIndex].eyebrow}</span>
+                      <Sparkles size={24} />
                     </div>
-                    <div className="rounded-xl bg-[#171717] p-3.5">
-                      <div className="flex items-center justify-between gap-3">
-                        <div className="flex items-center gap-2.5">
-                          <Sparkles size={17} className="shrink-0 text-[#db0031]" />
-                          <span className="text-[12px] font-semibold text-[#f7f2eb]/90">Start small. Move clearly.</span>
-                        </div>
-                        <span className="font-mono text-[9px] text-[#f7f2eb]/35">02</span>
-                      </div>
-                      <p className="mt-2 text-[11px] leading-4 text-[#f7f2eb]/50">A practical first step, without agency theatre.</p>
-                    </div>
-                    <div className="rounded-xl bg-[#171717] p-3.5">
-                      <div className="flex items-center justify-between gap-3">
-                        <div className="flex items-center gap-2.5">
-                          <Globe2 size={17} className="shrink-0 text-[#db0031]" />
-                          <span className="text-[12px] font-semibold text-[#f7f2eb]/90">Made for your next chapter.</span>
-                        </div>
-                        <span className="font-mono text-[9px] text-[#f7f2eb]/35">03</span>
-                      </div>
-                      <p className="mt-2 text-[11px] leading-4 text-[#f7f2eb]/50">Useful work that fits how your business runs.</p>
+                    <h2 className="font-display max-w-[280px] text-[clamp(3rem,5vw,5rem)] font-semibold leading-[.84]">{heroCardSlides[heroCardIndex].title}</h2>
+                    <p className="mt-7 max-w-[260px] text-[15px] font-semibold leading-5">{heroCardSlides[heroCardIndex].body}</p>
+                    <div className="mt-8 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.14em] text-[#171717]/60">
+                      <Check size={13} />
+                      {heroCardSlides[heroCardIndex].note}
                     </div>
                   </div>
-                  <div className="mt-4 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.14em] text-[#f7f2eb]/40">
-                    <Check size={13} className="text-[#db0031]" />
-                    Clarity before complexity
+                  <div className="flex items-center gap-2 border-t border-[#171717]/20 pt-4" aria-label="Hero card slides">
+                    {heroCardSlides.map((slide, index) => (
+                      <button
+                        key={slide.title}
+                        type="button"
+                        aria-label={`Show card ${index + 1}`}
+                        aria-pressed={heroCardIndex === index}
+                        onClick={() => setHeroCardIndex(index)}
+                        className={`h-1.5 rounded-full transition-all ${heroCardIndex === index ? 'w-10 bg-[#171717]' : 'w-2 bg-[#171717]/35'}`}
+                      />
+                    ))}
                   </div>
                 </div>
-                <div className="absolute left-0 top-[355px] w-[74%] rounded-[20px] bg-[#db0031] p-5 text-[#171717] shadow-xl shadow-black/20 lg:bottom-5 lg:top-auto lg:w-[62%]">
-                  <div className="mb-7 flex items-start justify-between">
-                    <span className="font-mono text-[10px] font-bold uppercase tracking-widest">Starting with<br />17 LKR</span>
-                    <Sparkles size={22} />
-                  </div>
-                  <p className="font-display text-2xl font-semibold leading-none">A clear first move.<br />A better partner.</p>
+                <div className="absolute bottom-0 left-0 rounded-full border border-[#db0031]/50 bg-[#171717] px-3 py-2 font-mono text-[10px] uppercase tracking-widest text-[#db0031]">
+                  Built for momentum →
                 </div>
-              <div className="absolute bottom-0 right-1 rounded-full border border-[#db0031]/50 bg-[#171717] px-3 py-2 font-mono text-[10px] uppercase tracking-widest text-[#db0031]">
-                Built for momentum →
               </div>
-            </div>
           </div>
           <div className="mt-20 flex flex-wrap items-center gap-x-9 gap-y-3 border-t border-[#f7f2eb]/15 pt-5 text-[11px] font-bold uppercase tracking-[0.16em] text-[#f7f2eb]/45">
             <span>For the owner-operator</span>
