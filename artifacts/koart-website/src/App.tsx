@@ -51,6 +51,12 @@ const serviceLinks = [
   { label: 'Who we serve', href: '#fit' },
 ];
 
+const heroCards = [
+  { id: 'price', label: 'the starting point', tone: 'red' },
+  { id: 'start', label: 'the koart start', tone: 'beige' },
+  { id: 'why', label: 'why choose us', tone: 'dark' },
+] as const;
+
 function Logo({ inverse = false }: { inverse?: boolean }) {
   return (
     <a
@@ -68,6 +74,7 @@ function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [form, setForm] = useState<FormState>(initialForm);
   const [submitted, setSubmitted] = useState(false);
+  const [activeHeroCard, setActiveHeroCard] = useState(0);
 
   const updateField = (field: keyof FormState, value: string) => {
     setForm((current) => ({ ...current, [field]: value }));
@@ -178,40 +185,75 @@ function Home() {
             </div>
 
               <div className="relative mx-auto min-h-[430px] w-full max-w-[490px] -translate-y-8 lg:min-h-[500px] lg:-translate-y-16">
-                <div className="absolute right-0 top-0 w-[84%] rotate-[3deg] rounded-[26px] border border-[#f7f2eb]/15 bg-[#353535] p-5 text-[#f7f2eb] shadow-2xl shadow-black/25">
-                  <div className="mb-5 flex items-center justify-between border-b border-[#f7f2eb]/15 pb-3">
-                    <span className="font-mono text-[10px] uppercase tracking-widest text-[#f7f2eb]/55">01 / why choose us</span>
-                    <span className="font-mono text-[10px] text-[#db0031]">03 reasons</span>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3 border-b border-[#f7f2eb]/10 pb-3">
-                      <span className="font-mono text-[10px] text-[#db0031]">01</span>
-                      <span className="text-[12px] font-semibold">One partner. Less juggling.</span>
-                    </div>
-                    <div className="flex items-center gap-3 border-b border-[#f7f2eb]/10 pb-3">
-                      <span className="font-mono text-[10px] text-[#db0031]">02</span>
-                      <span className="text-[12px] font-semibold">Clear work. Useful output.</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <span className="font-mono text-[10px] text-[#db0031]">03</span>
-                      <span className="text-[12px] font-semibold">Made for your next chapter.</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute right-5 top-16 w-[83%] rotate-[1deg] rounded-[26px] border border-[#171717]/10 bg-[#e9e1d5] p-5 text-[#171717] shadow-xl shadow-black/15">
-                  <div className="mb-7 flex items-start justify-between">
-                    <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#171717]/55">02 / the koart start</span>
-                    <ShieldCheck size={21} className="text-[#db0031]" />
-                  </div>
-                  <p className="font-display max-w-[250px] text-[2.1rem] font-semibold leading-[.9]">Good work should feel clear from day one.</p>
-                </div>
-                <div className="absolute left-0 top-36 w-[76%] rounded-[26px] bg-[#db0031] p-6 text-[#171717] shadow-2xl shadow-black/25">
-                  <div className="mb-8 flex items-start justify-between">
-                    <span className="font-mono text-[10px] font-bold uppercase tracking-widest">Starting point<br />17 000 LKR</span>
-                    <Sparkles size={23} />
-                  </div>
-                  <p className="font-display text-[2.25rem] font-semibold leading-[.88]">One clear first move.<br />A better partner.</p>
-                </div>
+                {[
+                  heroCards[(activeHeroCard + 2) % heroCards.length],
+                  heroCards[(activeHeroCard + 1) % heroCards.length],
+                  heroCards[activeHeroCard],
+                ].map((card, layer) => {
+                  const isFront = layer === 2;
+                  const cardPosition = [
+                    'absolute right-0 top-0 z-10 w-[84%] rotate-[3deg]',
+                    'absolute right-5 top-16 z-20 w-[83%] rotate-[1deg]',
+                    'absolute left-0 top-36 z-30 w-[76%]',
+                  ][layer];
+                  const cardTone = card.tone === 'red'
+                    ? 'bg-[#db0031] text-[#171717] shadow-2xl shadow-black/25'
+                    : card.tone === 'beige'
+                      ? 'border border-[#171717]/10 bg-[#e9e1d5] text-[#171717] shadow-xl shadow-black/15'
+                      : 'border border-[#f7f2eb]/15 bg-[#353535] text-[#f7f2eb] shadow-2xl shadow-black/25';
+
+                  return (
+                    <button
+                      key={card.id}
+                      type="button"
+                      aria-label={`Show ${card.label} card`}
+                      aria-pressed={isFront}
+                      onClick={() => setActiveHeroCard(heroCards.findIndex((heroCard) => heroCard.id === card.id))}
+                      className={`${cardPosition} rounded-[26px] p-5 text-left transition-transform duration-300 hover:-translate-y-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#db0031] ${cardTone}`}
+                    >
+                      {card.id === 'why' && (
+                        <>
+                          <div className="mb-5 flex items-center justify-between border-b border-[#f7f2eb]/15 pb-3">
+                            <span className="font-mono text-[10px] uppercase tracking-widest text-[#f7f2eb]/55">01 / why choose us</span>
+                            <span className="font-mono text-[10px] text-[#db0031]">03 reasons</span>
+                          </div>
+                          <div className="space-y-3">
+                            <div className="flex items-center gap-3 border-b border-[#f7f2eb]/10 pb-3">
+                              <span className="font-mono text-[10px] text-[#db0031]">01</span>
+                              <span className="text-[12px] font-semibold">One partner. Less juggling.</span>
+                            </div>
+                            <div className="flex items-center gap-3 border-b border-[#f7f2eb]/10 pb-3">
+                              <span className="font-mono text-[10px] text-[#db0031]">02</span>
+                              <span className="text-[12px] font-semibold">Clear work. Useful output.</span>
+                            </div>
+                            <div className="flex items-center gap-3">
+                              <span className="font-mono text-[10px] text-[#db0031]">03</span>
+                              <span className="text-[12px] font-semibold">Made for your next chapter.</span>
+                            </div>
+                          </div>
+                        </>
+                      )}
+                      {card.id === 'start' && (
+                        <>
+                          <div className="mb-7 flex items-start justify-between">
+                            <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#171717]/55">02 / the koart start</span>
+                            <ShieldCheck size={21} className="text-[#db0031]" />
+                          </div>
+                          <p className="font-display max-w-[250px] text-[2.1rem] font-semibold leading-[.9]">Good work should feel clear from day one.</p>
+                        </>
+                      )}
+                      {card.id === 'price' && (
+                        <>
+                          <div className="mb-8 flex items-start justify-between">
+                            <span className="font-mono text-[10px] font-bold uppercase tracking-widest">Starting point<br />17 000 LKR</span>
+                            <Sparkles size={23} />
+                          </div>
+                          <p className="font-display text-[2.25rem] font-semibold leading-[.88]">One clear first move.<br />A better partner.</p>
+                        </>
+                      )}
+                    </button>
+                  );
+                })}
               </div>
           </div>
           <div className="mt-20 flex flex-wrap items-center gap-x-9 gap-y-3 border-t border-[#f7f2eb]/15 pt-5 text-[11px] font-bold uppercase tracking-[0.16em] text-[#f7f2eb]/45">
