@@ -1,4 +1,4 @@
-import { type FormEvent, type ReactNode, useEffect, useState } from 'react';
+import { type FormEvent, type ReactNode, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import {
   ArrowDownRight,
@@ -51,27 +51,6 @@ const serviceLinks = [
   { label: 'Who we serve', href: '#fit' },
 ];
 
-const heroCardSlides = [
-  {
-    eyebrow: 'Starting with',
-    title: '17 LKR',
-    body: 'A clear first move. A better partner.',
-    note: 'Start small. Move clearly.',
-  },
-  {
-    eyebrow: 'One partner.',
-    title: 'Every touchpoint.',
-    body: 'Build, content, and growth thinking in one room.',
-    note: 'Less juggling. More momentum.',
-  },
-  {
-    eyebrow: 'Made for',
-    title: 'Your next chapter.',
-    body: 'Useful work that fits how your business actually runs.',
-    note: 'Clarity before complexity.',
-  },
-];
-
 function Logo({ inverse = false }: { inverse?: boolean }) {
   return (
     <a
@@ -89,15 +68,6 @@ function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [form, setForm] = useState<FormState>(initialForm);
   const [submitted, setSubmitted] = useState(false);
-  const [heroCardIndex, setHeroCardIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setHeroCardIndex((current) => (current + 1) % heroCardSlides.length);
-    }, 3600);
-
-    return () => window.clearInterval(timer);
-  }, []);
 
   const updateField = (field: keyof FormState, value: string) => {
     setForm((current) => ({ ...current, [field]: value }));
@@ -207,43 +177,12 @@ function Home() {
               </div>
             </div>
 
-              <div className="relative mx-auto min-h-[390px] w-full max-w-[490px] lg:min-h-[500px]">
-                <div className="absolute right-0 top-2 w-[90%] rounded-[28px] bg-[#db0031] p-6 text-[#171717] shadow-2xl shadow-black/25 float-card sm:w-[86%]">
-                  <div className="mb-7 flex items-center justify-between border-b border-[#171717]/20 pb-4">
-                    <div className="flex items-center gap-2">
-                      <span className="h-2 w-2 rounded-full bg-[#171717]" />
-                      <span className="font-mono text-[10px] uppercase tracking-widest text-[#171717]/60">koart / card set</span>
-                    </div>
-                    <span className="font-mono text-[10px] font-bold">{String(heroCardIndex + 1).padStart(2, '0')} / 03</span>
-                  </div>
-                  <div key={heroCardIndex} className="min-h-[245px] animate-[card-swap_500ms_ease-out]">
-                    <div className="mb-5 flex items-start justify-between">
-                      <span className="font-mono text-[10px] font-bold uppercase tracking-widest">{heroCardSlides[heroCardIndex].eyebrow}</span>
-                      <Sparkles size={24} />
-                    </div>
-                    <h2 className="font-display max-w-[280px] text-[clamp(3rem,5vw,5rem)] font-semibold leading-[.84]">{heroCardSlides[heroCardIndex].title}</h2>
-                    <p className="mt-7 max-w-[260px] text-[15px] font-semibold leading-5">{heroCardSlides[heroCardIndex].body}</p>
-                    <div className="mt-8 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.14em] text-[#171717]/60">
-                      <Check size={13} />
-                      {heroCardSlides[heroCardIndex].note}
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2 border-t border-[#171717]/20 pt-4" aria-label="Hero card slides">
-                    {heroCardSlides.map((slide, index) => (
-                      <button
-                        key={slide.title}
-                        type="button"
-                        aria-label={`Show card ${index + 1}`}
-                        aria-pressed={heroCardIndex === index}
-                        onClick={() => setHeroCardIndex(index)}
-                        className={`h-1.5 rounded-full transition-all ${heroCardIndex === index ? 'w-10 bg-[#171717]' : 'w-2 bg-[#171717]/35'}`}
-                      />
-                    ))}
-                  </div>
-                </div>
-                <div className="absolute bottom-0 left-0 rounded-full border border-[#db0031]/50 bg-[#171717] px-3 py-2 font-mono text-[10px] uppercase tracking-widest text-[#db0031]">
-                  Built for momentum →
-                </div>
+              <div className="relative mx-auto flex min-h-[390px] w-full max-w-[490px] items-center justify-center lg:min-h-[500px]">
+                <img
+                  src="/koart-hero-logo.png"
+                  alt="KOart company logo"
+                  className="w-[72%] max-w-[380px] object-contain sm:w-[78%]"
+                />
               </div>
           </div>
           <div className="mt-20 flex flex-wrap items-center gap-x-9 gap-y-3 border-t border-[#f7f2eb]/15 pt-5 text-[11px] font-bold uppercase tracking-[0.16em] text-[#f7f2eb]/45">
