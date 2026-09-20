@@ -177,44 +177,59 @@ function Home() {
               </div>
             </div>
 
-            <div className="relative mx-auto min-h-[370px] w-full max-w-[490px] lg:min-h-[500px]">
-                <div className="absolute right-0 top-2 w-[82%] rounded-[22px] border border-[#f7f2eb]/15 bg-[#262626] p-4 shadow-2xl shadow-black/20 float-card">
-                 <div className="mb-5 flex items-center justify-between border-b border-[#f7f2eb]/10 pb-3">
-                  <div className="flex items-center gap-2">
-                    <span className="h-2 w-2 rounded-full bg-[#db0031]" />
-                    <span className="font-mono text-[10px] uppercase tracking-widest text-[#f7f2eb]/50">koart / control room</span>
-                  </div>
-                   <span className="font-mono text-[10px] text-[#db0031]">LIVE</span>
-                </div>
-                <div className="space-y-3">
-                  {[
-                    ['brand site', 'ready to grow', 88],
-                    ['lead flow', 'automated', 72],
-                    ['content rhythm', 'in motion', 64],
-                  ].map(([label, status, width]) => (
-                    <div key={label as string} className="rounded-xl bg-[#171717] p-3">
-                      <div className="mb-2 flex items-center justify-between text-[11px]">
-                        <span className="text-[#f7f2eb]/80">{label}</span>
-                        <span className="text-[#db0031]">{status}</span>
-                      </div>
-                      <div className="h-1.5 rounded-full bg-[#f7f2eb]/10">
-                        <div className="h-full rounded-full bg-[#db0031]" style={{ width: `${width}%` }} />
-                      </div>
+              <div className="relative mx-auto min-h-[540px] w-full max-w-[490px] lg:min-h-[500px]">
+                <div className="absolute right-0 top-2 w-[86%] rounded-[22px] border border-[#f7f2eb]/15 bg-[#262626] p-4 shadow-2xl shadow-black/20 float-card">
+                  <div className="mb-4 flex items-center justify-between border-b border-[#f7f2eb]/10 pb-3">
+                    <div className="flex items-center gap-2">
+                      <span className="h-2 w-2 rounded-full bg-[#db0031]" />
+                      <span className="font-mono text-[10px] uppercase tracking-widest text-[#f7f2eb]/50">koart / why us</span>
                     </div>
-                  ))}
+                    <span className="font-mono text-[10px] text-[#db0031]">START HERE</span>
+                  </div>
+                  <div className="space-y-2.5">
+                    <div className="rounded-xl bg-[#171717] p-3.5">
+                      <div className="flex items-center justify-between gap-3">
+                        <div className="flex items-center gap-2.5">
+                          <ShieldCheck size={17} className="shrink-0 text-[#db0031]" />
+                          <span className="text-[12px] font-semibold text-[#f7f2eb]/90">One team. Less juggling.</span>
+                        </div>
+                        <span className="font-mono text-[9px] text-[#f7f2eb]/35">01</span>
+                      </div>
+                      <p className="mt-2 text-[11px] leading-4 text-[#f7f2eb]/50">Build, content, and growth thinking in one room.</p>
+                    </div>
+                    <div className="rounded-xl bg-[#171717] p-3.5">
+                      <div className="flex items-center justify-between gap-3">
+                        <div className="flex items-center gap-2.5">
+                          <Sparkles size={17} className="shrink-0 text-[#db0031]" />
+                          <span className="text-[12px] font-semibold text-[#f7f2eb]/90">Start small. Move clearly.</span>
+                        </div>
+                        <span className="font-mono text-[9px] text-[#f7f2eb]/35">02</span>
+                      </div>
+                      <p className="mt-2 text-[11px] leading-4 text-[#f7f2eb]/50">A practical first step, without agency theatre.</p>
+                    </div>
+                    <div className="rounded-xl bg-[#171717] p-3.5">
+                      <div className="flex items-center justify-between gap-3">
+                        <div className="flex items-center gap-2.5">
+                          <Globe2 size={17} className="shrink-0 text-[#db0031]" />
+                          <span className="text-[12px] font-semibold text-[#f7f2eb]/90">Made for your next chapter.</span>
+                        </div>
+                        <span className="font-mono text-[9px] text-[#f7f2eb]/35">03</span>
+                      </div>
+                      <p className="mt-2 text-[11px] leading-4 text-[#f7f2eb]/50">Useful work that fits how your business runs.</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.14em] text-[#f7f2eb]/40">
+                    <Check size={13} className="text-[#db0031]" />
+                    Clarity before complexity
+                  </div>
                 </div>
-                <div className="mt-5 flex items-center justify-between text-[10px] text-[#f7f2eb]/45">
-                  <span>Last synced just now</span>
-                  <span className="font-mono">09:42:18</span>
+                <div className="absolute left-0 top-[355px] w-[74%] rounded-[20px] bg-[#db0031] p-5 text-[#171717] shadow-xl shadow-black/20 lg:bottom-5 lg:top-auto lg:w-[62%]">
+                  <div className="mb-7 flex items-start justify-between">
+                    <span className="font-mono text-[10px] font-bold uppercase tracking-widest">Starting with<br />17 LKR</span>
+                    <Sparkles size={22} />
+                  </div>
+                  <p className="font-display text-2xl font-semibold leading-none">A clear first move.<br />A better partner.</p>
                 </div>
-              </div>
-              <div className="absolute bottom-5 left-0 w-[62%] rounded-[20px] bg-[#db0031] p-5 text-[#171717] shadow-xl shadow-black/20">
-                <div className="mb-9 flex items-start justify-between">
-                  <span className="font-mono text-[10px] font-bold uppercase tracking-widest">Good work<br />travels.</span>
-                  <Sparkles size={22} />
-                </div>
-                <p className="font-display text-2xl font-semibold leading-none">One partner.<br />Every touchpoint.</p>
-              </div>
               <div className="absolute bottom-0 right-1 rounded-full border border-[#db0031]/50 bg-[#171717] px-3 py-2 font-mono text-[10px] uppercase tracking-widest text-[#db0031]">
                 Built for momentum →
               </div>
